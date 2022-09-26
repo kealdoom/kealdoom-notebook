@@ -63,3 +63,5 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+
+master_doc = 'index'
