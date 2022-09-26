@@ -38,7 +38,7 @@ Markdown 是一种可以使用普通文本编辑器编写的标记语言，通�
 
 使用 `#` 标记标题时， `#` 必须位于行首，例如：
 
-<div align=center><img src="img.png"></div>
+<img src="img.png">
 
 ### 1.2 使用`=`标记标题
 
