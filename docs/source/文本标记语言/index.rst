@@ -5,3 +5,4 @@
    :maxdepth: 2
 
    Markdown/contents.md
+   reStructuredText/contents.rst
