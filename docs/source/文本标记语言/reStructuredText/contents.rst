@@ -379,7 +379,7 @@ https://www.github.com
         :width: 200
 
 
-    引用方式： ref: `fig-ref`_
+    引用方式: `fig-ref`_
 
 
 .. _fig-ref:
@@ -388,7 +388,8 @@ https://www.github.com
     :align: center
     :width: 200
 
-引用方式： ref: `fig-ref`_
+
+`fig-ref`_
 
 **表格引用：**
 
@@ -409,9 +410,7 @@ https://www.github.com
     True   True   True
     =====  =====  ======
 
-    引用方式：ref: `table-ref`_
-
-    自定义引用名称：ref: `table1 <table-ref>`_
+    引用方式：`table-ref`_
 
 .. _table-ref:
 
@@ -428,6 +427,250 @@ False  True   True
 True   True   True
 =====  =====  ======
 
-引用方式：ref: `table-ref`_
+引用方式：`table-ref`_
 
-自定义引用名称：ref: `table1 <table-ref>`_
+3.5 引用文档
+---------------
+
+引用其他的rst文档时，省略后缀。
+
+自定义引用文字：
+
+::
+
+    :doc:`引用文档 <../index>`
+
+:doc:`引用文档 <../index>`
+
+使用被引用文档的标题作为引用文字：
+
+::
+
+    :doc:`../index`
+
+:doc:`../index`
+
+3.6 使用标签引用文档
+-----------------------
+
+要在被引用的文件头定义标签，如index.rst文件头写 “index-label” 的标签。
+
+::
+
+    将下行标签写在index.rst首行
+    .. _index-label:
+
+    :ref:`使用标签引用文档 <index-label>`
+
+    :ref:`index-label`
+
+:ref:`使用标签引用文档 <index-label>`
+
+:ref:`index-label`
+
+4. 代码块
+~~~~~~~~~~~~~~~~
+
+4.1 基础代码块
+----------------
+
+行内代码块使用4个 \` 将代码包裹，两侧还需要有空格。
+
+标记原始文本块需要使用两个连续的英文引号 :: ，之后跟空行，内容要缩进，再以空行结束。
+
+4.2 highlight代码高亮
+-----------------------
+
+使用highlight定义默认高亮方式，直到下一个highlight指令才会更改高亮方式。
+
+::
+
+    .. highlight:: sh
+
+    ::
+
+        sudo apt install python
+
+        echo "Hello world!"
+
+效果：
+
+.. highlight:: sh
+
+::
+
+    sudo apt install python
+    echo "Hello world!"
+
+4.3 code-block代码高亮
+--------------------------
+
+Shell 代码高亮：
+
+::
+
+    .. code-block:: sh  #指定语言
+        :caption: test_shell  #标题
+        :emphasize-lines: 2  #指定高亮行
+        :linenos:   #显示行号
+
+        sudo apt install python
+        echo "Hello world!"
+
+效果：
+
+.. code-block:: sh
+    :caption: test_shell
+    :emphasize-lines: 2
+    :linenos:
+
+    sudo apt install python
+    echo "Hello world!"
+
+Python 代码高亮：
+
+::
+
+    .. code-block:: py
+        :caption: test_py
+        :emphasize-lines: 3, 4
+        :linenos:
+
+        def test():
+            print("Hello world!")
+
+        test()
+
+效果：
+
+    .. code-block:: py
+        :caption: test_py
+        :emphasize-lines: 3, 4
+        :linenos:
+
+        def test():
+            print("Hello world!")
+
+        test()
+
+4.4 literalinclude嵌入本地文件并高亮
+-----------------------------------------------------------
+
+4.4.1 嵌入整个文件
+++++++++++++++++++++
+
+直接嵌入文件，包含标题、代码语言、高亮、带编号以及名称方便引用。
+
+::
+
+    .. literalinclude:: test.py
+        :caption: test.py
+        :language: py
+        :emphasize-lines: 3, 4
+        :linenos:
+
+效果：
+
+.. literalinclude:: test.py
+        :caption: test.py
+        :language: py
+        :emphasize-lines: 3, 4
+        :linenos:
+
+4.4.2 嵌入文件的一部分
+++++++++++++++++++++++++++++
+
+通过lines指定嵌入文件的某些行。
+
+::
+
+    .. literalinclude:: test.py
+        :caption: test.py
+        :language: py
+        :lines: 1, 2
+        :linenos:
+
+效果：
+
+.. literalinclude:: test.py
+        :caption: test.py
+        :language: py
+        :lines: 1, 2
+        :linenos:
+
+4.4.3 文件对比
+++++++++++++++++++++++
+
+::
+
+    .. literalinclude:: test.py
+    :diff: test2.py
+
+效果：
+
+.. literalinclude:: test.py
+    :diff: test2.py
+
+5. 特殊提示
+~~~~~~~~~~~~~~~~~
+
+- note: 注解（蓝）
+- hint: 提示（绿）
+- important: 重要（绿）
+- tip: 小技巧（绿）
+- warning: 警告（黄）
+- caution: 警告（黄）
+- attention: 注意（黄）
+- error: 错误（红）
+- danger: 危险（红）
+
+
+::
+
+    .. note:: This is a note admonition.
+     This is the second line of the first paragraph.
+
+     - The note contains all indented body elements
+       following.
+     - It includes this bullet list.
+
+    .. hint:: This is a hint admonition.
+
+    .. important:: This is a important admonition.
+
+    .. tip:: This is a tip admonition.
+
+    .. warning:: This is a warning admonition.
+
+    .. caution:: This is a caution admonition.
+
+    .. attention:: This is a attention admonition.
+
+    .. error:: This is a error admonition.
+
+    .. danger:: This is a danger admonition.
+
+效果：
+
+.. note:: This is a note admonition.
+ This is the second line of the first paragraph.
+
+ - The note contains all indented body elements
+   following.
+ - It includes this bullet list.
+
+.. hint:: This is a hint admonition.
+
+.. important:: This is a important admonition.
+
+.. tip:: This is a tip admonition.
+
+.. warning:: This is a warning admonition.
+
+.. caution:: This is a caution admonition.
+
+.. attention:: This is a attention admonition.
+
+.. error:: This is a error admonition.
+
+.. danger:: This is a danger admonition.

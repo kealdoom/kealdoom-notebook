@@ -353,7 +353,7 @@ Markdown图片语法格式为：
 
 **展示效果：**
 
-![img](img.png)
+![img](img2.png)
 
 图片地址也可以使用外部链接。
 
@@ -365,7 +365,7 @@ Markdown图片语法格式为：
 
 **展示效果：**
 
-<img src="img.png" width=100>
+<img src="img2.png" width=100>
 
 ## 8. 表格
 
