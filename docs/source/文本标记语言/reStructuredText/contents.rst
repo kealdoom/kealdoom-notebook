@@ -389,7 +389,7 @@ https://www.github.com
     :width: 200
 
 
-`fig-ref`_
+引用方式: `fig-ref`_
 
 **表格引用：**
 
@@ -613,17 +613,6 @@ Python 代码高亮：
 
 5. 特殊提示
 ~~~~~~~~~~~~~~~~~
-
-- note: 注解（蓝）
-- hint: 提示（绿）
-- important: 重要（绿）
-- tip: 小技巧（绿）
-- warning: 警告（黄）
-- caution: 警告（黄）
-- attention: 注意（黄）
-- error: 错误（红）
-- danger: 危险（红）
-
 
 ::
 
