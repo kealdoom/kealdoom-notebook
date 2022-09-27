@@ -6,6 +6,6 @@ Linux 小记
 
 
    运维及队列管理/contents.rst
-   常用工具/contents.rst
+   常用文本编辑工具/contents.rst
 
 
