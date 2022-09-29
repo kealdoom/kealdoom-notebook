@@ -13,12 +13,3 @@ Kealdoom's notebook
 
    文本标记语言/index.rst
    Linux 小记/index.rst
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
