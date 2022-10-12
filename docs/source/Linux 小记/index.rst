@@ -10,4 +10,5 @@ Linux 小记
    正则表达式/contents.rst
    常用文本编辑工具/contents.rst
    运维及队列管理/contents.rst
+   其他常用命令/contents.rst
 
